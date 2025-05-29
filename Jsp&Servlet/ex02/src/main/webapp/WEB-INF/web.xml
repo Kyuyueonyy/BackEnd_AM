@@ -22,4 +22,13 @@
         <url-pattern>/my</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>you</servlet-name>
+        <servlet-class>org.scoula.ex02.YourServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>you</servlet-name>
+        <url-pattern>/you</url-pattern>
+    </servlet-mapping>
+
 </web-app>
