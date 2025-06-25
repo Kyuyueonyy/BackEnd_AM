@@ -11,4 +11,5 @@
     <typeAliases>
         <package name="org.scoula.security.account.domain"/>
     </typeAliases>
+
 </configuration>

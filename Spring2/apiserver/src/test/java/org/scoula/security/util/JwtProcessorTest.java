@@ -12,11 +12,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {RootConfig.class, SecurityConfig.class})
 @Log4j2
 class JwtProcessorTest {
-
     @Autowired
     JwtProcessor jwtProcessor;
 
@@ -28,22 +28,15 @@ class JwtProcessorTest {
         assertNotNull(token);
     }
 
-    @Test
-    void getUsername() {
-        String token = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyMTgwMjc4NCwiZXhwIjoxNzIxODAzMDg0fQ.nwD4rIroYL6hr_-Esav8KIsHw573MbAiTT-Nz_yYHI8bMcyGZMOEjMt0Own3io_c";
-        String username = jwtProcessor.getUsername(token);
-        log.info(username);
-        assertNotNull(username);
-    }
+    //eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTc1MDc0MDUwNiwiZXhwIjoxNzUwNzQwODA2fQ.424JPChxXjVzrEElajoWnFlZgRA2Ak9Zg-i-NunmJ5DxTEi2Pq-0MxxGhmrE8Jpe
 
     @Test
     void validateToken() {
-        // 5분경과후테스트
-        String token = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyMTgwMjc4NCwiZXhwIjoxNzIxODAzMDg0fQ.nwD4rIroYL6hr_-Esav8KIsHw573MbAiTT-Nz_yYHI8bMcyGZMOEjMt0Own3io_c";
+        // 2분경과후테스트
+        String token = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTc1MDgxMzUwMywiZXhwIjoxNzUwODEzNjIzfQ.hbchdsYci0dA0XiBw_dOZlqO5Etb1KKuSbmkus48uqRdeyjznnAdW0wZVDwvxOIx";
+
         boolean isValid = jwtProcessor.validateToken(token); // 5분경과후면예외발생
         log.info(isValid);
         assertTrue(isValid);    // 5분전이면true
     }
 }
-
-

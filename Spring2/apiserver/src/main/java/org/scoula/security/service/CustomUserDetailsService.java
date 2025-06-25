@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Log4j2
-@RequiredArgsConstructor //생성자를 자동으로 주입해줌
+@RequiredArgsConstructor //생성자를 자동으로 주입해줌.
 public class CustomUserDetailsService implements UserDetailsService {
 
-    //생성자 주입 방식 -> 생성자 자동으로 만들어주는 어노테이션 : @RequiredArgsConstructor
     private final UserDetailsMapper userDetailsMapper;
 
     @Override

@@ -14,7 +14,7 @@ import java.util.Date;
 public class JwtProcessor {
 
     //1. jwt 생성
-    static private final long TOKEN_VALID_MILISECOND = 1000L * 60 * 5; // 5 분
+    static private final long TOKEN_VALID_MILISECOND = 1000L * 60 * 2; // 2 분
     private final String secretKey
             = "충분히긴임의의(랜덤한) 비밀키문자열배정";
     private final Key key = Keys.hmacShaKeyFor(secretKey.getBytes(StandardCharsets.UTF_8));
@@ -50,17 +50,3 @@ public class JwtProcessor {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
